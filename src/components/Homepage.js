@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 
 
-const localStyles = {
-    background: "#C8102E",
-    display: "flex",
-    height: "100%"
-}
+
 class Homepage extends Component {
     constructor(props) {
         super(props);
@@ -19,17 +15,29 @@ class Homepage extends Component {
             .then((response) => response.json())
             .then(data => {
                 this.setState({ squad: data.squad })
-                console.log(this.state.squad)
+                // console.log(this.state.squad)
             })
     }
 
 
     render() {
         return (
-            <div style={localStyles}>
-                hello world
+            <div>
+                <div >
+                    Keeping up with The Kop
+            </div>
+
+                <div>
+                    {this.state.squad.map((player) => {
+                        return <div>{player.name}</div>
+                    })
+                    }
+                </div>
+
             </div>
         );
+
+
     }
 }
 

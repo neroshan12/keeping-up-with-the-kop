@@ -3,10 +3,19 @@ import Homepage from './components/Homepage'
 import logo from './logo.svg';
 import './App.css';
 
+const localStyles = {
+  background: "#C8102E",
+  display: "flex",
+  height: "100%"
+}
 class App extends Component {
   render() {
     return (
-      <Homepage />
+      <div style={localStyles}>
+        <Homepage />
+
+
+      </div>
     );
   }
 }
