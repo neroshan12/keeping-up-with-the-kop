@@ -1,43 +1,28 @@
 import React, { Component } from 'react';
-
-
+import Squad from './Squad'
+import Fixtures from './Fixtures'
+import '../styles/Homepage.css';
 
 class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            squad: []
         }
-    }
-
-    componentWillMount = () => {
-        fetch("https://api.football-data.org/v2/teams/64", { headers: { "X-Auth-Token": process.env.REACT_APP_FOOTY_API_KEY } })
-            .then((response) => response.json())
-            .then(data => {
-                this.setState({ squad: data.squad })
-                // console.log(this.state.squad)
-            })
     }
 
 
     render() {
         return (
-            <div>
-                <div >
-                    Keeping up with The Kop
-            </div>
-
-                <div>
-                    {this.state.squad.map((player) => {
-                        return <div>{player.name}</div>
-                    })
-                    }
+            <div className="Homepage_container">
+                <div className="Homepage_title">
+                    <div className="Homepage_text">
+                        Keeping up with The Kop
                 </div>
-
+                </div>
+                <Squad />
+                <Fixtures />
             </div>
         );
-
-
     }
 }
 
