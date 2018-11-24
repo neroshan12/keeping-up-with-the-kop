@@ -19,8 +19,11 @@ class Homepage extends Component {
                         Keeping up with The Kop
                 </div>
                 </div>
-                <Squad />
-                <Fixtures />
+                <div className="Homepage_content">
+                    <Squad />
+                    <Fixtures />
+                </div>
+
             </div>
         );
     }

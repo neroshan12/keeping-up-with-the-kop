@@ -23,11 +23,11 @@ class Fixtures extends Component {
     render() {
         return (
             <div className="Fixtures_container">
-                <div className="Fixtures_title">fixtures</div>
+                <div className="Fixtures_title">Fixtures</div>
                 {this.state.fixtures.map((match) => {
-                    return <div>
-                        <div className="Fixtures_player">Home Team: {match.homeTeam.name}</div>
-                        <div className="Fixtures_player">Away Team: {match.awayTeam.name}</div>
+                    return <div className="Fixtures_holder">
+                        <div className="Fixtures_player">{match.homeTeam.name}</div>
+                        <div className="Fixtures_player">vs {match.awayTeam.name}</div>
                     </div>
                 })
                 }
