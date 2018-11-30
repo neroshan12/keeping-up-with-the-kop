@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Squad from './Squad'
 import Fixtures from './Fixtures'
 import Competitions from './Competitions'
+import News from './News'
 import '../styles/Homepage.css';
 
 class Homepage extends Component {
@@ -32,8 +33,10 @@ class Homepage extends Component {
                     <Squad />
                     <Fixtures />
                     <Competitions
-                        activeCompetitions={this.state.squad.activeCompetitions} />
+                        activeCompetitions={this.state.squad.activeCompetitions}
+                    />
                 </div>
+                <News />
             </div>
         );
     }

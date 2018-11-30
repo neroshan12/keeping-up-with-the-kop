@@ -5,14 +5,10 @@ class Competitions extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         }
     }
 
-
-
     render() {
-        console.log("look here", this.props.activeCompetitions)
         if (this.props.activeCompetitions) {
             return (
                 <div className="Competitions_container">
