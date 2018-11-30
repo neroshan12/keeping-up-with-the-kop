@@ -24,8 +24,8 @@ class Squad extends Component {
         return (
             <div className="Squad_container">
                 <div className="Squad_title">SQUAD</div>
-                {this.state.squad.map((player) => {
-                    return <div className="Squad_player">{player.name}</div>
+                {this.state.squad.map((player, key) => {
+                    return <div key={key} className="Squad_player">{player.name}</div>
                 })
                 }
             </div>
