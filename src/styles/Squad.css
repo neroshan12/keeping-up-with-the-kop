@@ -1,0 +1,24 @@
+.Squad_container {
+    border: 1px solid white ;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%
+}
+
+.Squad_title {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.Squad_player {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
