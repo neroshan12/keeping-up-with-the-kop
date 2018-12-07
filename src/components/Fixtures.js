@@ -15,7 +15,6 @@ class Fixtures extends Component {
             .then((response) => response.json())
             .then(data => {
                 this.setState({ fixtures: data.matches })
-                console.log(this.state.fixtures)
             })
     }
 
