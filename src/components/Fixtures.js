@@ -15,6 +15,7 @@ class Fixtures extends Component {
             .then((response) => response.json())
             .then(data => {
                 this.setState({ fixtures: data.matches })
+                console.log(this.state.fixtures)
             })
     }
 
@@ -24,10 +25,17 @@ class Fixtures extends Component {
             <div className="Fixtures_container">
                 <div className="Fixtures_title">Fixtures</div>
                 {this.state.fixtures.map((match, key) => {
-                    return <div key={key} className="Fixtures_holder">
-                        <div className="Fixtures_player">{match.homeTeam.name}</div>
-                        <div className="Fixtures_player">vs {match.awayTeam.name}</div>
-                    </div>
+                    if (match.status === 'FINISHED') {
+                        return <div key={key} className="Fixtures_holder_done">
+                            <div className="Fixtures_player">{match.homeTeam.name} {match.score.fullTime.homeTeam}</div>
+                            <div className="Fixtures_player">- {match.score.fullTime.awayTeam} {match.awayTeam.name}</div>
+                        </div>
+                    } else {
+                        return <div key={key} className="Fixtures_holder">
+                            <div className="Fixtures_player">{match.homeTeam.name}</div>
+                            <div className="Fixtures_player">vs {match.awayTeam.name}</div>
+                        </div>
+                    }
                 })
                 }
             </div>

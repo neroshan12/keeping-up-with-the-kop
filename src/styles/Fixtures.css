@@ -28,3 +28,10 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.Fixtures_holder_done {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: green;
+}

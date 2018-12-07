@@ -11,8 +11,16 @@ class News extends Component {
         }
     }
 
+
     componentDidMount = () => {
-        fetch("https://newsapi.org/v2/everything?q=liverpool-fc&from=2018-11-29&to=2018-11-29&sortBy=popularity&language=en", { headers: { "X-Api-Key": process.env.REACT_APP_NEWS_API_KEY } })
+        var today = new Date();
+        var day = today.getDate();
+        var month = today.getMonth() + 1;
+        var year = today.getFullYear();
+
+        let todaysDate = year + "-" + month + "-" + day
+
+        fetch(`https://newsapi.org/v2/everything?q=liverpool-fc&from=2018-11-29&to=${todaysDate}&sortBy=popularity&language=en`, { headers: { "X-Api-Key": process.env.REACT_APP_NEWS_API_KEY } })
             .then((response) => response.json())
             .then(data => {
                 this.setState({ news: data })
