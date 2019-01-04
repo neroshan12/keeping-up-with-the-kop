@@ -3,6 +3,7 @@ import Squad from './Squad'
 import Fixtures from './Fixtures'
 import Competitions from './Competitions'
 import News from './News'
+import PremierLeague from './PremierLeague'
 import '../styles/Homepage.css';
 
 class Homepage extends Component {
@@ -37,6 +38,7 @@ class Homepage extends Component {
                     />
                 </div>
                 <News />
+                <PremierLeague />
             </div>
         );
     }

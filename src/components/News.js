@@ -19,8 +19,9 @@ class News extends Component {
         var year = today.getFullYear();
 
         let todaysDate = year + "-" + month + "-" + day
+        console.log("this is todays date:", todaysDate)
 
-        fetch(`https://newsapi.org/v2/everything?q=liverpool-fc&from=2018-11-29&to=${todaysDate}&sortBy=popularity&language=en`, { headers: { "X-Api-Key": process.env.REACT_APP_NEWS_API_KEY } })
+        fetch(`https://newsapi.org/v2/everything?q=liverpool-fc&from=2018-12-04&to=${todaysDate}&sortBy=popularity&language=en`, { headers: { "X-Api-Key": process.env.REACT_APP_NEWS_API_KEY } })
             .then((response) => response.json())
             .then(data => {
 
